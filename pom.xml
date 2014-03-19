@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -9,7 +10,7 @@
 
 	<groupId>com.github.ddth</groupId>
 	<artifactId>ddth-osgikafka</artifactId>
-	<version>0.8.2-SNAPSHOT</version>
+	<version>0.8.1.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>ddth-osgikafka</name>
@@ -111,9 +112,10 @@
 						<!-- <Bundle-Activator></Bundle-Activator> -->
 						<Export-Package>kafka.*;version=${version.kafka}</Export-Package>
 						<!-- <Import-Package></Import-Package> -->
-						<Embed-Dependency>groupId=!javax.*|junit|log4j|org.slf4j|org.apache.zookeeper|org.scala-lang</Embed-Dependency>
+						<Embed-Dependency>groupId=!javax.*|junit|log4j|org.slf4j|org.apache.zookeeper|org.scala-lang|org.apache.kafka;inline=false,artifactId=kafka_2.10;inline=true</Embed-Dependency>
 						<Embed-Transitive>true</Embed-Transitive>
-						<Embed-Directory>lib</Embed-Directory>
+						<!-- <Embed-Directory>lib</Embed-Directory> -->
+						<Include-Resource>LICENSE.txt,README.md,RELEASE-NOTES.md</Include-Resource>
 					</instructions>
 				</configuration>
 			</plugin>
