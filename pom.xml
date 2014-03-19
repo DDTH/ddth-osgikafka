@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -9,11 +10,11 @@
 
 	<groupId>com.github.ddth</groupId>
 	<artifactId>ddth-osgikafka</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.8.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>ddth-osgikafka</name>
-	<description>DDTH's Apache Kafka Libraries and Utilities packaged as OSGi bundle</description>
+	<description>Package Kafka as an OSGi bundle</description>
 	<url>https://github.com/DDTH/ddth-osgikafka</url>
 
 	<licenses>
@@ -39,11 +40,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.java>1.6</version.java>
-		<version.osgi>[4.3.0,5.0.0)</version.osgi>
-		<version.guava>[16.0,17.0)</version.guava>
-		<version.kafka>[0.8.0,0.9.0)</version.kafka>
-		<version.zookeeper>[3.4.5,4.0.0)</version.zookeeper>
-		<version.ddth-kafka>[0.1.0,0.1.1)</version.ddth-kafka>
+		<version.kafka>0.8.1</version.kafka>
 		<version.scala-lang>[2.10.3,2.11.0)</version.scala-lang>
 	</properties>
 
@@ -56,69 +53,23 @@
 	</repositories>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.core</artifactId>
-			<version>${version.osgi}</version>
-			<scope>provided</scope>
-		</dependency>
-
 		<!-- BEGIN excluded packages -->
-		<dependency>
-			<groupId>javax.activation</groupId>
-			<artifactId>activation</artifactId>
-			<version>1.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>jline</groupId>
-			<artifactId>jline</artifactId>
-			<version>0.9.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.jopt-simple</groupId>
-			<artifactId>jopt-simple</artifactId>
-			<version>3.2</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.4</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.6.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.netty</groupId>
-			<artifactId>netty</artifactId>
-			<version>3.2.2.Final</version>
-			<scope>provided</scope>
-		</dependency>
+		<!-- <dependency> <groupId>javax.activation</groupId> <artifactId>activation</artifactId> 
+			<version>1.1</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>javax.mail</groupId> <artifactId>mail</artifactId> <version>1.4</version> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>jline</groupId> 
+			<artifactId>jline</artifactId> <version>0.9.0</version> <scope>provided</scope> 
+			</dependency> <dependency> <groupId>net.sf.jopt-simple</groupId> <artifactId>jopt-simple</artifactId> 
+			<version>3.2</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>log4j</groupId> <artifactId>log4j</artifactId> <version>1.2.4</version> 
+			<scope>provided</scope> </dependency> <dependency> <groupId>org.slf4j</groupId> 
+			<artifactId>slf4j-api</artifactId> <version>1.6.1</version> <scope>provided</scope> 
+			</dependency> <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
+			<version>1.6.1</version> <scope>provided</scope> </dependency> <dependency> 
+			<groupId>org.jboss.netty</groupId> <artifactId>netty</artifactId> <version>3.2.2.Final</version> 
+			<scope>provided</scope> </dependency> -->
 		<!-- END excluded packages -->
 
-		<dependency>
-			<groupId>com.github.ddth</groupId>
-			<artifactId>ddth-kafka</artifactId>
-			<version>${version.ddth-kafka}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka_2.10</artifactId>
@@ -137,30 +88,6 @@
 					<artifactId>jms</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>${version.zookeeper}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.sun.jdmk</groupId>
-					<artifactId>jmxtools</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jmx</groupId>
-					<artifactId>jmxri</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${version.guava}</version>
 		</dependency>
 	</dependencies>
 
@@ -183,13 +110,31 @@
 				<configuration>
 					<instructions>
 						<!-- <Bundle-Activator></Bundle-Activator> -->
-						<Export-Package>com.github.ddth.kafka</Export-Package>
-						<Import-Package>!org.jboss.netty.*,!com.google.protobuf,!com.sun.management,!jline,!joptsimple,!org.apache.tools.ant.*,!org.jboss.logging,!scala.tools.jline.*,*</Import-Package>
-						<Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+						<Export-Package>kafka.*;version=${version.kafka}</Export-Package>
+						<!-- <Import-Package></Import-Package> -->
+						<Embed-Dependency>groupId=!javax.*|junit|log4j|org.slf4j|org.apache.zookeeper|org.scala-lang</Embed-Dependency>
 						<Embed-Transitive>true</Embed-Transitive>
 						<Embed-Directory>lib</Embed-Directory>
 					</instructions>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>distro-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>assembly/ddth-osgikafka-withdeps.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

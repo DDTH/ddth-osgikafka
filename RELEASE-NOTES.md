@@ -1,6 +1,6 @@
 ddth-osgikafka release notes
 ============================
 
-0.1.0 - 2014-02-22
+0.8.1 - 2014-03-19
 ------------------
-- First release.
+- [Kafka v0.8.1](https://github.com/apache/kafka/releases/tag/0.8.1).
